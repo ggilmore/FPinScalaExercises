@@ -1,17 +1,22 @@
 package Chapter2
 
-
-
-/**
- * Created by gmgilmore on 5/10/15.
- */
 object Exercises extends App{
   def nthFib(n:Int):Int = {
     require(n >= 0)
     def loop(twoBefore:Int, oneBefore:Int, currentIndex:Int):Int = {
-      if (currentIndex == 0) twoBefore
-      else if (currentIndex == 1) oneBefore
-      else loop(oneBefore, twoBefore + oneBefore, currentIndex - 1)
+      if (currentIndex == 0) {
+        println(twoBefore)
+        twoBefore
+      }
+      else if (currentIndex == 1) {
+        println(twoBefore)
+        println(oneBefore)
+        oneBefore
+      }
+      else {
+        println(twoBefore)
+        loop(oneBefore, twoBefore + oneBefore, currentIndex - 1)
+      }
     }
     loop(0 , 1, n)
   }
@@ -41,5 +46,6 @@ object Exercises extends App{
     (a:A) => f(g(a))
   }
 
+  nthFib(9)
 
 }
